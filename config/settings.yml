@@ -1,0 +1,6 @@
+---
+site_name: "Site Name Here"
+banner_path: "uploads/banners/"
+avatar_path: "uploads/avatar/"
+gallery_path: "uploads/gallery/"
+category_path: "uploads/category/"
