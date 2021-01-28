@@ -1,6 +1,6 @@
 require 'colorize'
 require 'strscan'
-require_relative 'linter.rb'
+require_relative './linter.rb'
 
 class CheckErrors
     attr_reader :check, :errors

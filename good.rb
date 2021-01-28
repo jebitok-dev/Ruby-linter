@@ -1,6 +1,6 @@
 class User 
     def initialize(password, username)
-        @password = password]
+        @password = password
         @username = username
     end
 
@@ -8,7 +8,5 @@ class User
         time = Time.now
         @files[filename] = time
         puts "#{filename} was created by #{username} at #{time}"
-    end
-
-    
+    end  
 end
