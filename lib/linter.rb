@@ -1,7 +1,7 @@
 require 'colorize'
 
 class FileChecker
-    attr_reader :err_message, :file_lines, :file_path, :file_line_number:
+    attr_reader :err_message, :file_lines, :file_path, :file_line_number
     def initialize(file_path)
         @err_message = ''
         @file_path = file_path

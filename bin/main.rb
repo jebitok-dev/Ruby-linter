@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require_relative '../lib/check.rb'
+require_relative '../lib/checker.rb'
 
 check = CheckErrors.new('./bad.rb')
 check.check_identation

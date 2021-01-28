@@ -1,11 +1,11 @@
 require 'colorize'
 require 'strscan'
-require_relative 'files_checkers.rb'
+require_relative 'linter.rb'
 
 class CheckErrors
     attr_reader :check, :errors
     def initialize(file_path)
-        @check = File.new(file_path)
+        @check = FileChecker.new(file_path)
         @errors = []
         @keywords = %w[begin case class def do if module unless]
     end
@@ -46,6 +46,42 @@ class CheckErrors
         log_error("Lint/Syntax: Missing 'end'") if status.eql?(1)
         log_error("Lint/Syntax: Unexpected 'end'") if status.eql?(-1)
     end
+
+      # rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
+
+    def check_identation
+        message = "IdentWidth: Use 2 spaces for identation."
+        current_value = 0
+        ident_value = 0
+
+        @check.file_lines.each_with_index do |str_val, index|
+            strip_line = str_val.strip.split(' ')
+            expected_value = current_value * 2
+            reset_word = %w[class def if elsif until module unless begin case]
+                
+            next if str_val.strip.empty? || strip_line.first.eql?('#')
+
+            ident_value += 1 if reset_word.include?(strip_line.first) || strip_line.include?('do')
+            ident_value -= 1 if str_val.strip == 'end'
+
+            next if str_val.strip.empty?
+
+            ident_error(str_val, index, expected_value, message)
+            current_value = ident_value
+        end
+    end
+
+    def ident_error(str_val, index, expected_value, message)
+        strip_line = str_val.strip.split(' ')
+        empty = str_val.match(/^\s*\s*/)
+        end_check = empty[0].size.eql?(expected_value.zero? ? 0 : expected_value - 2)
+
+        if str_val.strip.eql?('end') || strip_line.first == 'elsif' || strip_line.first == 'when'
+            log_error("line:#{index + 1} #{message}") unless end_check
+        elsif !emp[0].size.eql?(expected_value)
+            log_error("line:#{index + 1} #{message}")
+        end
+    end 
 
       # rubocop: enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
 
