@@ -49,10 +49,10 @@ class CheckErrors
 
   # rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
 
-  def check_identation
-    message = 'IdentWidth: Use 2 spaces for identation.'
+  def check_indentation
+    message = 'IndentWidth: Use 2 spaces for indentation.'
     current_value = 0
-    ident_value = 0
+    indent_value = 0
 
     @checker.file_lines.each_with_index do |str_val, index|
       strip_line = str_val.strip.split(' ')
@@ -61,20 +61,20 @@ class CheckErrors
 
       next if str_val.strip.empty? || strip_line.first.eql?('#')
 
-      ident_value += 1 if reset_word.include?(strip_line.first) || strip_line.include?('do')
-      ident_value -= 1 if str_val.strip == 'end'
+      indent_value += 1 if reset_word.include?(strip_line.first) || strip_line.include?('do')
+      indent_value -= 1 if str_val.strip == 'end'
 
       next if str_val.strip.empty?
 
-      ident_error(str_val, index, expected_value, message)
-      current_value = ident_value
+      indent_error(str_val, index, expected_value, message)
+      current_value = indent_value
     end
   end
 
-  def ident_error(str_val, index, expected_value, message)
+  def indent_error(str_val, index, expected_value, message)
     strip_line = str_val.strip.split(' ')
-    empty = str_val.match(/^\s*\s*/)
-    end_check = empty[0].size.eql?(expected_value.zero? ? 0 : expected_value - 2)
+    emp = str_val.match(/^\s*\s*/)
+    end_check = emp[0].size.eql?(expected_value.zero? ? 0 : expected_value - 2)
 
     if str_val.strip.eql?('end') || strip_line.first == 'elsif' || strip_line.first == 'when'
       log_error("line:#{index + 1} #{message}") unless end_check

@@ -2,7 +2,7 @@
 require_relative '../lib/checker'
 
 check = CheckErrors.new('bad.rb')
-check.check_identation
+check.check_indentation
 check.trailing_space
 check.tag_error
 check.end_error

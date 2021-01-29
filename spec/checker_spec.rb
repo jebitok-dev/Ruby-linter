@@ -4,16 +4,16 @@ describe CheckErrors do
   let(:checker) { CheckErrors.new('bad.rb') }
 
   describe '#trailing_space' do
-    it 'return trailing space error' do
+    it 'should return trailing space error on line 2' do
       checker.trailing_space
-      expect(checker.errors[0]).to eql('line:2:33: Error: Trailing whitespace detected.')
+      expect(checker.errors[0]).to eql('line:2:33 Trailing whitespace detected.')
     end
   end
 
-  describe '#check_identation' do
-    it 'return identation errors' do
-      checker.check_identation
-      expect(checker.errors[0]).to eql('line:4 IdentWidth: Use 2 spaces for identation.')
+  describe '#check_indentation' do
+    it 'return indentation errors' do
+      checker.check_indentation
+      expect(checker.errors[0]).to eql('line:4 IndentWidth: Use 2 spaces for indentation.')
     end
   end
 
