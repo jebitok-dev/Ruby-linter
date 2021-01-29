@@ -13,11 +13,13 @@
 $ ruby -v
 $ gem install ruby
 ````
+- Set-Up the project locally
+````
 - $ git clone https://github.com/jebitok-dev/Ruby-linter
 - $ git checkout develop
 - Delete gemlock file
 - run ```$ bundle```
-
+````
 
 ## How to Use
 
@@ -156,23 +158,8 @@ In this version release, we will check the following issues:
 Open the terminal and checkout the parent project folder and run:
 ````
 $ rspec
-
-```
-<!-- ## Live Demo -->
-
-<!-- [Live Demo Link](https://livedemo.com) -->
-
-<!-- ### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Deployment -->
-
-## Author
+````
+### Author
 
 👤 **Sharon Jebitok**
 
@@ -187,7 +174,7 @@ Contributions, issues, and feature requests are welcome!
 ### How to Contribute
 
 To get a local copy up and running follow these simple example steps.
-
+````
 - Fork the repository
 - git clone https://github.com/your_username/Ruby-linter
 - git checkout develop
@@ -198,16 +185,16 @@ To get a local copy up and running follow these simple example steps.
 - git pull upstream develop
 - git commit -m "commit message"
 - git push -u origin HEAD
+````
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-<!-- ## Acknowledgments
+## Acknowledgments
 
-- Hat tip to anyone whose code was used
 - Inspired by [Microverse](https://microverse.org/)
-- etc -->
+
 
 ## 📝 License
 
