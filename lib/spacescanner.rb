@@ -6,7 +6,7 @@ module SpaceScanner
     errors
   end
 
-  # rubocop:disable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/PerceivedComplexity
   def indentation(lines, errors)
     lines.each_with_index do |line, index|
       next if line.start_with?('@') || line == '\n' || line.end_with?('\n')
@@ -33,5 +33,5 @@ module SpaceScanner
   def last_line(lines, errors)
     errors << 'Last line in the file should be empty' unless lines.last.include?("\n")
   end
-  # rubocop:enable Metrics/PerceivedComplexity,Metrics/CyclomaticComplexity
+  # rubocop:enable Metrics/PerceivedComplexity
 end
