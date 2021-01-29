@@ -1,6 +1,6 @@
-require_relative './spacescanner.rb'
-require_relative './buffer.rb'
+require_relative './spacescanner'
+require_relative './buffer'
 
 class Linter < Buffer
-    include SpaceScanner
+  include SpaceScanner
 end

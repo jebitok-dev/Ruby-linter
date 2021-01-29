@@ -20,7 +20,9 @@ errors = Linter.check(file)
 
 if errors.size.positive?
   puts "Success 1 file tested. Scan completed with the following #{errors.size} errors: "
-  errors.each { |error| puts ' Error: ' + "#{error}\n" }
+  # rubocop:disable Style/StringConcatenation
+  errors.each { |error| puts '  Error: ' + "#{error}\n" }
+# rubocop:enable Style/StringConcatenation
 else
   puts '1 file tested. All checks completed with no errors'
 end
