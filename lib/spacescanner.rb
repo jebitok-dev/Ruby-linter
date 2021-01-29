@@ -1,11 +1,15 @@
 module SpaceScanner
   # rubocop:disable Metrics/CyclomaticComplexity
+  attr_accessor :errors
+
   def trailing_space(lines, errors)
     lines.each_with_index do |line, index|
       errors << "Trailing space found on line #{index + 1}." if line.end_with?("; \n")
     end
     errors
   end
+
+  private
 
   def indentation(lines, errors)
     lines.each_with_index do |line, index|
@@ -20,6 +24,8 @@ module SpaceScanner
     end
     errors
   end
+
+  public
 
   def space_before_bracket(lines, errors)
     lines.each_with_index do |line, index|

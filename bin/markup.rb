@@ -18,9 +18,13 @@ puts ' '
 
 errors = Linter.check(file)
 
+# rubocop:disable Style/StringConcatenation
+
 if errors.size.positive?
   puts "Success 1 file tested. Scan completed with the following #{errors.size} errors: "
   errors.each { |error| puts '  Error: ' + "#{error}\n" }
+# rubocop:enable Style/StringConcatenation
+
 else
   puts '1 file tested. All checks completed with no errors'
 end

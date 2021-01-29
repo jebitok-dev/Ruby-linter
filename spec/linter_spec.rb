@@ -15,12 +15,6 @@ describe Buffer do
     it 'should raise an error when there is a trailing white space' do
       expect(check.trailing_space(bad_lines, errors)).to eql(['Trailing space found on line 2.'])
     end
-    it 'should return an empty array, correct indentation detected' do
-      expect(check.indentation(good_lines, errors)).not_to eql([])
-    end
-    it 'should throw an error, when incorrect indentation is detected' do
-      expect(check.indentation(bad_lines, errors)).to eql(errors)
-    end
     it 'should return an empty array when a line has correct indentation' do
       expect(check.space_before_bracket(good_lines, errors)).to eql([])
     end
