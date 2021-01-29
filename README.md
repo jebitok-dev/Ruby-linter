@@ -2,9 +2,7 @@
 
 ## Ruby-linter
 
-> Build a CSS linter as a Ruby Capstone Project for Ruby module. The linter checks css file incase of such errors: for Extra/Unnecessary empty lines,
-
-    Indentation(2 spaces), and Last Empty Line Space before bracket.
+> Build a CSS linter as a Ruby Capstone Project for Ruby module. The linter checks css file incase of such errors: for Extra/Unnecessary empty lines, Indentation(2 spaces)- private method, and Last Empty Line Space before bracket.
 
 ## Installation
 
