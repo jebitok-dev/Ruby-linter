@@ -1,0 +1,18 @@
+.column-text {
+  margin-left: -40px;
+}
+.column-text p {
+  font-size: 13px;
+  line-height: 1em;
+  margin-left: -45px;
+  color: #0d0d0d;
+}
+.show-more a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin-left: -45px;
+}
+.sort-sections p {
+  font-size: 16px;
+  margin-top: -1.2px;
+}

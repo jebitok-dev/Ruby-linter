@@ -3,17 +3,17 @@ require_relative '../lib/linter'
 require_relative '../lib/buffer'
 
 puts '-------------------------------'
-puts '   |Welcome to MarkUp Linter!|  '
+puts '   |Welcome to CSS Linter!|  '
 puts '-------------------------------'
 
 puts ' '
 puts 'Scanning file...'
 puts ' '
-file = ARGV.first
+file = ARGV[0]
 puts ' '
 puts 'Scanning file for possible errors...'
 puts ' '
-puts 'Always input the correct path for your file i.e ./bin/markup.rb lib/good.md'
+puts 'Always input the correct path for your file i.e ./bin/markup.rb lib/good.css'
 puts ' '
 
 errors = Linter.check(file)
